@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale="1.0">
     <title>Fundación Menem Zulemito</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,30 +12,29 @@
         <nav id="menu">
             <h1>FUNDACION MENEM ZULEMITO</h1>
             <ul id="lista">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Fin</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <article>
-            <section id="recycling">
-                <h2>Reciclaje Tecnológico</h2>
-                <p>el reciclaje tecnologico recicla la tecnologia
+            <!-- Tarjeta de Reciclaje Tecnológico -->
+            <a href="recycling.php" style="text-decoration: none; color: inherit;">
+                <section id="recycling">
+                    <h2>Reciclaje Tecnológico</h2>
+                    <p>Descubre cómo reutilizar y reciclar dispositivos electrónicos para reducir el impacto ambiental y cerrar la brecha digital.</p>
+                </section>
+            </a>
 
-                esto es importate ya que reciclar la tecnologia recicla lla tecnologia pero para reciclar
-
-                hay que ser inteligente y gracias a nuestra fundacion ZULEMITO
-
-                vas a poder reciclar
-                </p>
-            </section>
-            <section id="cyberbullying">
-                <h2>Ciber Acoso</h2>
-                <p>Información sobre ciber acoso...</p>
-            </section>
+            <!-- Tarjeta de Ciberacoso -->
+            <a href="cyberbullying.php" style="text-decoration: none; color: inherit;">
+                <section id="cyberbullying">
+                    <h2>Ciber Acoso</h2>
+                    <p>Aprende sobre los riesgos del ciberacoso, cómo prevenirlo y qué hacer si eres víctima de este problema creciente.</p>
+                </section>
+            </a>
         </article>
-    
     </main>
     <footer>
         <div class="contact-info">
@@ -43,16 +42,6 @@
             <p>Ubicación: Calle Falsa 123, Ciudad, País</p>
             <p>Teléfono: +123 456 7890</p>
             <p>Email: contacto@fundacionzulemito.org</p>
-        </div>
-        <div class="contact-form">
-            <h3>Envíanos un mensaje</h3>
-            <form action="send_message.php" method="post">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
         </div>
         <p>Todos los derechos reservados Fundacion Menem ZULEMITO 2025</p>
     </footer>

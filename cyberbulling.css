@@ -186,17 +186,3 @@ footer {
     width: 100%;
     bottom: 0;
 }
-@keyframes slideInSection {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-section {
-    animation: slideInSection 1s ease-out;
-}
