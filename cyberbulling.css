@@ -84,7 +84,7 @@ nav h1 {
 
 nav h1:hover {
     color: #cc0000;
-    text-shadow: 1px 1px 5px #0d0086;
+    text-shadow: 1px 1px 10px #0d0086;
 }
 
 nav ul {
@@ -171,48 +171,18 @@ section h2 {
 /* Párrafos dentro de las tarjetas */
 section p {
     font-size: 1em;
-    text-shadow: 1px 1px 1px #473d94;
-    
-}
-
-section a {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #cc0000;
-}
-
-section a:hover {
-    color: #990000;
-}
-
-section:hover {
-    background-color: #716f6f;
-    transform: scale(1.05);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: var(--text-color); /* Color del texto */
+    text-shadow: none;
+    margin-bottom: 10px;
 }
 
 footer {
     background-color: var(--footer-background); /* Fondo del footer */
     color: white;
-    text-shadow: 1px 1px 1px #0d0086;
+    text-shadow: 5px 3px 10px var(--footer-text-shadow); /* Sombra del texto */
     text-align: center;
     padding: 5px;
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-@keyframes slideInSection {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-section {
-    animation: slideInSection 1s ease-out;
 }
