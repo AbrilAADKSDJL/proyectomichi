@@ -73,7 +73,7 @@ nav h1 {
 
 nav h1:hover {
     color: #cc0000;
-    text-shadow: 1px 1px 10px #0d0086;
+    text-shadow: 1px 1px 5px #0d0086;
 }
 
 nav ul {
@@ -152,7 +152,7 @@ section h2 {
 
 section p {
     font-size: 1em;
-    text-shadow: 5px 3px 30px #473d94;
+    text-shadow: 1px 1px 1px #473d94;
     
 }
 
@@ -176,7 +176,7 @@ section:hover {
 footer {
     background-color: #333;
     color: white;
-    text-shadow: 5px 3px 10px #0d0086;
+    text-shadow: 1px 1px 1px #0d0086;
     text-align: center;
     padding: 5px;
     position: fixed;
