@@ -119,8 +119,9 @@ nav ul li a:hover {
 }
 
 main {
+    height: 700px;
     padding: 20px;
-    display: flex;
+    
     justify-content: center;
 }
 
@@ -144,15 +145,20 @@ article {
 
 /* Estilo de las tarjetas */
 section {
-    width: 500px; /* Ancho fijo para las tarjetas */
+    width: 1000px; /* Ancho fijo para las tarjetas */
+    height: 150px;
     background-color: var(--secondary-color); /* Fondo claro */
     border: 1px solid var(--secondary-color); /* Borde */
     color: var(--text-color); /* Color del texto */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
-    padding: 20px;
+    margin: 0;
     text-align: center; /* Centra el contenido dentro de la tarjeta */
     transition: transform 0.3s ease, background-color 0.3s ease; /* Animación al pasar el mouse */
+}
+#informacion,h1,h3{
+    text-align: center;
+    
 }
 
 /* Efecto hover en las tarjetas */
@@ -171,7 +177,7 @@ section h2 {
 /* Párrafos dentro de las tarjetas */
 section p {
     font-size: 1em;
-    text-shadow: 1px 1px 1px #473d94;
+    text-shadow: 1px 1px 4px #473d94;
     
 }
 
@@ -197,10 +203,9 @@ footer {
     color: white;
     text-shadow: 1px 1px 1px #0d0086;
     text-align: center;
-    padding: 5px;
-    position: fixed;
+    padding: 20px;
     width: 100%;
-    bottom: 0;
+    box-sizing: border-box;
 }
 @keyframes slideInSection {
     from {
@@ -215,4 +220,149 @@ footer {
 
 section {
     animation: slideInSection 1s ease-out;
+}
+#recycling-content {
+    max-width: 800px;
+    
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 255, 0.53);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    
+}
+#recycling-content h2, #recycling-content h3 {
+    
+    
+    margin-bottom: 15px;
+}
+.styled-list {
+    list-style-type: none; /* Elimina los marcadores predeterminados */
+    padding: 0;
+    
+}
+.styled-list li {
+ 
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    align-items: center;
+    gap: 10px;
+}
+.styled-list li::before {
+    content: "✔"; 
+       
+}
+.comments {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comments h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.comments form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comments textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comments button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comments button:hover {
+    background-color: #990000;
+}
+
+.comment-list .comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#recycling-content:hover{
+    
+        background-color: var(--hover-color); /* Color al pasar el mouse */
+        transform: scale(1.01); /* Aumenta ligeramente el tamaño */
+    
+    
+}
+#titulo{
+    text-align: center;
+    justify-content: center;
+
+ 
+ 
+}
+#titulo {
+    text-align: center;
+    font-size: 2em;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+/* Contenedor de los artículos */
+#articles-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los artículos se ajusten en varias filas si es necesario */
+    gap: 20px; /* Espacio entre los artículos */
+    justify-content: center; /* Centra los artículos horizontalmente */
+    padding: 20px;
+}
+
+/* Estilo para los artículos individuales */
+.recycling-article {
+    flex: 1 1 calc(45% - 20px); /* Cada artículo ocupa el 45% del ancho del contenedor menos el espacio del gap */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover en los artículos */
+.recycling-article:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Títulos dentro de los artículos */
+.recycling-article h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Listas dentro de los artículos */
+.styled-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.styled-list li {
+    margin-bottom: 10px;
 }
