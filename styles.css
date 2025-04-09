@@ -366,3 +366,47 @@ section {
 .styled-list li {
     margin-bottom: 10px;
 }
+
+/* Estilos específicos para la página de ciberacoso */
+.cyberbullying-info {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.features-grid, .prevention-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature-item, .prevention-item {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-item:hover, .prevention-item:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.examples-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.examples-list li {
+    margin-bottom: 10px;
+}
+
+.argentina-info {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
