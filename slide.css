@@ -1,3 +1,9 @@
+@font-face {
+
+    font-family: fino;
+    src: url(CaviarDreams.ttf);
+}
+main{font-family: fino;}
 #slider {
     position: relative;
     width: 100%;
@@ -46,9 +52,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra todo el slide sin deformarse */
-    z-index: -1; /* Envía la imagen al fondo */
-    animation: zoomIn 10s ease infinite; /* Animación de zoom suave */
+    object-fit: cover;
+    z-index: -1;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    z-index: 0;
 }
 
 @keyframes zoomIn {
@@ -56,13 +72,13 @@
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1); /* Zoom intermedio */
+        transform: scale(1.05); /* Zoom más sutil */
     }
     100% {
         transform: scale(1);
     }
 }
-
+a{text-decoration: none;}
 .slide .content {
     z-index: 1;
     background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
@@ -73,6 +89,31 @@
     opacity: 0; /* Oculta el contenido inicialmente */
     transform: translateY(20px); /* Desplaza hacia abajo inicialmente */
     animation: fadeInContent 1s ease-in-out forwards 0.5s; /* Animación de entrada con retraso */
+}
+
+.slide .content h1, .slide .content p {
+    opacity: 0;
+    transform: translateY(20px); /* Desplaza hacia abajo inicialmente */
+    animation: fadeInText 1s ease-in-out forwards;
+}
+
+.slide .content h1 {
+    animation-delay: 0.3s; /* Retraso para el título */
+}
+
+.slide .content p {
+    animation-delay: 0.6s; /* Retraso para el párrafo */
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInContent {
@@ -116,6 +157,11 @@
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.control.active {
+    background-color: #4CAF50; /* Color del botón activo */
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño */
 }
 
 .control:hover {
@@ -189,7 +235,12 @@ header {
     z-index: 10; /* Asegura que el header esté encima del slider */
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Transición más fluida */
+}
+
+header.blue {
+    background-color: #007BFF; /* Azul para el slide 2 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
 header h1 {
@@ -209,4 +260,59 @@ header ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Contenedor del header */
+#header-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el ícono y el texto */
+}
+
+/* Estilo del ícono */
+#header-icon {
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+    animation: bounce 1.5s infinite; /* Animación de rebote */
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Rebote hacia arriba */
+    }
+}
+
+/* Estilo base para las letras del header */
+#animated-header span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px); /* Desplaza hacia abajo inicialmente */
+    animation: fadeInLetters 1s ease-in-out forwards;
+}
+
+/* Animación para las letras */
+@keyframes fadeInLetters {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .slide .content {
+        max-width: 90%; /* Reduce el ancho del contenido */
+        padding: 15px;
+    }
+
+    .control {
+        padding: 8px 12px; /* Botones más pequeños */
+    }
 }

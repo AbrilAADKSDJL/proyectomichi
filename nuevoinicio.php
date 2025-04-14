@@ -9,7 +9,10 @@
 <body>
     <header>
         <nav id="menu">
-            <h1>FUNDACION MENEM ZULEMITO</h1>
+            <div id="header-container">
+                <img id="header-icon" src="klipartz.com.png" alt="Icono" />
+                <h1 id="animated-header">HOPE-ACADEMY-ORG</h1>
+            </div>
             <ul id="lista">
                 <li><a href="nuevoinicio.php">Inicio</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
@@ -45,5 +48,20 @@
         </div>
     </main>
     <script src="slider.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('animated-header');
+            const text = header.textContent;
+            header.innerHTML = ''; // Limpia el contenido original
+
+            // Divide el texto en letras y envuelve cada una en un span
+            text.split('').forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.style.animationDelay = `${index * 0.1}s`; // Retraso progresivo para cada letra
+                header.appendChild(span);
+            });
+        });
+    </script>
 </body>
 </html>
