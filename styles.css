@@ -11,22 +11,26 @@
 
 /* Definición de variables de colores */
 :root {
-    --primary-color: #cc0000; /* Color principal */
-    --secondary-color: #55555570; /* Fondo claro */
-    --hover-color: #716f6f; /* Color al pasar el mouse */
-    --text-color: #333; /* Color del texto */
-    --background-color: #333; /* Fondo general */
-    --footer-background: #333; /* Fondo del footer */
-    --footer-text-shadow: #0d0086; /* Sombra del texto en el footer */
+    --primary-color: #4CAF50; /* Verde principal */
+    --secondary-color: #E8F5E9; /* Fondo claro */
+    --hover-color: #A5D6A7; /* Verde más claro al pasar el mouse */
+    --text-color: #ffffff; /* Verde oscuro para el texto */
+    --background-color: #000000; /* Fondo general *
+    --footer-background: #1B5E20; /* Verde oscuro para el footer */
+    --footer-text-shadow: #A5D6A7; /* Sombra del texto en el footer */
 }
 
+
+/* Fondo animado */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, var(--background-color), #555);
+    background: linear-gradient(45deg, var(--background-color), #000000);
     background-size: 400% 400%;
-    animation: gradientBackground 10s ease infinite;
+    animation: gradientBackground 15s ease infinite;
+    color: var(--text-color);
+    overflow: hidden; /* Evita el scroll innecesario */
 }
 
 @keyframes gradientBackground {
@@ -41,27 +45,84 @@ body {
     }
 }
 
+
+
+
+
+
+
+
+
+
+/* Header fijo */
 header {
-    background-color: rgba(51, 51, 51, 0.9);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    animation: slideIn 1s ease-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4CAF50; /* Color inicial del header */
+    z-index: 10; /* Asegura que el header esté encima del slider */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
 }
 
-@keyframes slideIn {
+header h1 {
+    margin: 0;
+    color: white;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@keyframes slideDown {
     from {
         transform: translateY(-100%);
+        opacity: 0;
     }
     to {
         transform: translateY(0);
+        opacity: 1;
     }
 }
-#masivo{
-    height: 2000px;
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
 }
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #C8E6C9;
+}
+
+
 nav {
     display: flex;
     align-items: center;
@@ -83,8 +144,8 @@ nav h1 {
 }
 
 nav h1:hover {
-    color: #cc0000;
-    text-shadow: 1px 1px 5px #0d0086;
+    color: #acacac;
+    text-shadow: 1px 1px 5px #A5D6A7;
 }
 
 nav ul {
@@ -101,7 +162,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-    color: #cc0000;
+    color: #4CAF50;
     transform: scale(1.1);
 }
 
@@ -114,18 +175,18 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #cc0000;
+    color: #4CAF50;
     transform: scale(1.1);
 }
 
+/* Contenedor principal */
 main {
     height: 700px;
     padding: 20px;
-    
     justify-content: center;
+    overflow: hidden; /* Oculta el contenido que está fuera de la vista inicial */
+    position: relative;
 }
-
-
 
 #lista, li {
     list-style-type: none;
@@ -185,15 +246,15 @@ section a {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
-    color: #cc0000;
+    color: #4CAF50;
 }
 
 section a:hover {
-    color: #990000;
+    color: #A5D6A7;
 }
 
 section:hover {
-    background-color: #716f6f;
+    background-color: #A5D6A7;
     transform: scale(1.05);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -201,12 +262,22 @@ section:hover {
 footer {
     background-color: var(--footer-background); /* Fondo del footer */
     color: white;
-    text-shadow: 1px 1px 1px #0d0086;
+    text-shadow: 1px 1px 1px #A5D6A7;
     text-align: center;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
+    animation: fadeInUp 1.5s ease-in-out; /* Animación de entrada desde abajo */
 }
+
+footer .contact-info {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
 @keyframes slideInSection {
     from {
         transform: translateY(50px);
@@ -240,20 +311,32 @@ section {
     margin-bottom: 15px;
 }
 .styled-list {
-    list-style-type: none; /* Elimina los marcadores predeterminados */
-    padding: 0;
-    
+    list-style-type: disc;
+    padding-left: 20px;
 }
+
 .styled-list li {
- 
-    margin: 10px 0;
+    margin-bottom: 10px;
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     
     align-items: center;
     gap: 10px;
+    animation: fadeInLeft 1s ease-in-out; /* Animación de entrada desde la izquierda */
 }
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .styled-list li::before {
     content: "✔"; 
        
@@ -296,7 +379,7 @@ section {
 }
 
 .comments button:hover {
-    background-color: #990000;
+    background-color: #A5D6A7;
 }
 
 .comment-list .comment {
@@ -343,12 +426,25 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: fadeInScale 1.5s ease-in-out; /* Animación de entrada con escala */
+}
+
+@keyframes fadeInScale {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* Hover en los artículos */
 .recycling-article:hover {
     background-color: var(--hover-color);
     transform: scale(1.05);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Títulos dentro de los artículos */
@@ -410,3 +506,4 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
