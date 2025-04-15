@@ -10,20 +10,23 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="particles-js"></div>
+<div id="particles-js"></div> 
 <header>
-    <nav id="menu">
-         <h1>FUNDACION MENEM ZULEMITO</h1>
-        <ul id="lista">
-            <li><a href="index.php">Inicio</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav id="menu">
+            <div id="header-container">
+                <img id="header-icon" src="klipartz.com.png" alt="Icono" />
+                <h1 id="animated-header">HOPE-ACADEMY-ORG</h1>
+            </div>
+            <ul id="lista">
+                <li><a href="nuevoinicio.php">Inicio</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 <main>
-<h2 id="titulo">Reciclaje Tecnológico</h2>
-<div id="articles-container">
-<article class="recycling-article">
+    <h2 id="titulo">Reciclaje Tecnológico</h2>
+    <div id="articles-container">
+        <article class="recycling-article">
             <h3>Beneficios del reciclaje tecnológico</h3>
             <ul class="styled-list">
                 <li>Reduce la contaminación ambiental.</li>
@@ -52,60 +55,11 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
                 <li>Muchos de los residuos electrónicos que no se reciclan son enviados a países empobrecidos, donde terminan en vertederos.</li>
             </ul>
         </article>
-        </div>
-    <script src="js/particles.min.js"></script>
-<script src="js/particlesjs-config.json"></script>
-
-<section class="comments">
-        <h3>Comentarios</h3>
-        <?php if (isset($_SESSION['user_id'])): ?>
-            <form action="save_comment_recycling.php" method="post">
-                <label for="comment">Deja tu comentario:</label>
-                <textarea id="comment" name="comment" rows="4" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        <?php else: ?>
-            <p>Debes <a href="login.php">iniciar sesión</a> para dejar un comentario.</p>
-        <?php endif; ?>
-
-        <div class="comment-list">
-            <?php
-            // Conexión a la base de datos
-            $conn = new mysqli('localhost', 'root', '', 'proyectomichi');
-            if ($conn->connect_error) {
-                die("Error de conexión: " . $conn->connect_error);
-            }
-
-            // Obtener comentarios
-            $sql = "SELECT username, comment, created_at FROM comments_recycling ORDER BY created_at DESC";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<div class='comment'>";
-                    echo "<p><strong>" . htmlspecialchars($row['username']) . "</strong> dijo:</p>";
-                    echo "<p>" . htmlspecialchars($row['comment']) . "</p>";
-                    echo "<p><small>" . $row['created_at'] . "</small></p>";
-                    echo "</div>";
-                }
-            } else {
-                echo "<p>No hay comentarios aún. Sé el primero en comentar.</p>";
-            }
-
-            $conn->close();
-            ?>-->
-        </div>
-    </section>
-</main>
-<footer>
-    <div class="contact-info">
-        <h3>Contacto</h3>
-        <p>Ubicación: Calle Falsa 123, Ciudad, País</p>
-        <p>Teléfono: +123 456 7890</p>
-        <p>Email: contacto@fundacionzulemito.org</p>
     </div>
-    <p>Todos los derechos reservados Fundacion Menem ZULEMITO 2025</p>
-</footer>
+    
+</main>
 
+<script src="js/particles.min.js"></script>
+<script src="js/particlesjs-config.json"></script>
 </body>
 </html>
