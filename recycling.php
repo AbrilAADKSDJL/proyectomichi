@@ -15,7 +15,7 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
     <nav id="menu">
          <h1>FUNDACION MENEM ZULEMITO</h1>
         <ul id="lista">
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="nuevoinicio.php">Inicio</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
