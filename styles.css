@@ -154,6 +154,14 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: background-color 0.5s ease, transform 1.0s ease;
     height: auto; /* Asegura que la altura se ajuste al contenido */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.6s ease, transform 1.6s ease;
+}
+
+.recycling-article.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .recycling-article:hover {
@@ -228,6 +236,12 @@ main {
 
 .comment-list .comment p {
     margin: 5px 0;
+}
+
+#menu ul li a.active {
+    color: #A5D6A7; /* Verde claro */
+    font-weight: bold;
+    border-bottom: 2px solid #A5D6A7;
 }
 
 footer {

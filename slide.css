@@ -3,7 +3,19 @@
     font-family: fino;
     src: url(CaviarDreams.ttf);
 }
-main{font-family: fino;}
+body {
+    font-family: fino;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #2e7d32;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+header{
+    font-family: fino;
+}
 #slider {
     position: relative;
     width: 100%;
@@ -168,27 +180,8 @@ a{text-decoration: none;}
     background-color: #4CAF50;
     transform: scale(1.2); /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(45deg, var(--background-color), #000000);
-    background-size: 400% 400%;
-    animation: gradientBackground 15s ease infinite;
-    color: var(--text-color);
-    overflow: hidden; /* Evita el scroll innecesario */
-}
-@keyframes gradientBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+
+
 #info-button {
     display: inline-block;
     padding: 10px 20px;

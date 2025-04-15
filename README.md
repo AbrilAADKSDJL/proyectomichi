@@ -15,3 +15,4 @@ Ciberacoso El ciberacoso es una problemática creciente que afecta a personas de
 Conexión entre ambos temas El abuso de la tecnología y la adicción digital pueden fomentar la vulnerabilidad al ciberacoso. En muchos casos, las personas encuentran difícil desconectarse de estos entornos tóxicos. Promover una cultura de desconexión saludable y el reciclaje tecnológico puede ser una solución para reducir la dependencia digital y fomentar un uso responsable de la tecnología.
 Conclusión El reciclaje tecnológico y la concientización sobre el ciberacoso son aspectos fundamentales para una sociedad digital equilibrada. Adoptar prácticas responsables con la tecnología, tanto en su uso como en su desecho, puede contribuir a una convivencia digital más saludable.
 
+BUENO NECESITO QUE ALGUIEN AYUDE A HACER EL CYBERBULLYING.PHP, HACIENDO UN DISEÑO CON COLORES AZULES Y ACORDE AL ESTILO Y FUNCIONALIDAD DE LA PAGINA. INTENTE IMPLEMENTAR JS EN EL DISEÑO

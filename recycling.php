@@ -61,5 +61,39 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
 
 <script src="js/particles.min.js"></script>
 <script src="js/particlesjs-config.json"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const articles = document.querySelectorAll('.recycling-article');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        articles.forEach(article => observer.observe(article));
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('main > div, article');
+        const navLinks = document.querySelectorAll('#menu ul li a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    const id = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`#menu ul li a[href="#${id}"]`);
+                    if (activeLink) activeLink.classList.add('active');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
 </body>
 </html>
