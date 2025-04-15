@@ -153,16 +153,10 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
         </div>
     </section>
 </main>
-<footer>
-    <div class="contact-info">
-        <h3>Contacto</h3>
-        <p>Ubicación: Calle Falsa 123, Ciudad, País</p>
-        <p>Teléfono: +123 456 7890</p>
-        <p>Email: contacto@fundacionzulemito.org</p>
-    </div>
-    <p>Todos los derechos reservados Fundación Menem ZULEMITO 2025</p>
-</footer>
+
 <script src="js/particles.min.js"></script>
-<script src="js/particlesjs-config.json"></script>
+<script src="js/particlesjs-config2.json"></script>
+        
+    </script>
 </body>
 </html>

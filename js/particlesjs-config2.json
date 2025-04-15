@@ -71,8 +71,8 @@ particlesJS({
     "detect_on": "canvas",
     "events": {
       "onhover": {
-        "enable": true,
-        "mode": "repulse"
+        "enable": false,
+        "mode": "grab"
       },
       "onclick": {
         "enable": false,
@@ -107,4 +107,5 @@ particlesJS({
     }
   },
   "retina_detect": true
-})
+}
+)
