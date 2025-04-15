@@ -9,13 +9,13 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
     <title>Reciclaje Tecnológico</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="recycling">
 <div id="particles-js"></div> 
-<header>
+<header id="header">
         <nav id="menu">
             <div id="header-container">
                 <img id="header-icon" src="klipartz.com.png" alt="Icono" />
-                <h1 id="animated-header">HOPE-ACADEMY-ORG</h1>
+                <h1 id="animated-header">NESTOR-KIRCHER</h1>
             </div>
             <ul id="lista">
                 <li><a href="nuevoinicio.php">Inicio</a></li>
@@ -55,7 +55,9 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
                 <li>Muchos de los residuos electrónicos que no se reciclan son enviados a países empobrecidos, donde terminan en vertederos.</li>
             </ul>
         </article>
+
     </div>
+    
     
 </main>
 

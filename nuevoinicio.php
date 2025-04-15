@@ -11,7 +11,7 @@
         <nav id="menu">
             <div id="header-container">
                 <img id="header-icon" src="klipartz.com.png" alt="Icono" />
-                <h1 id="animated-header">HOPE-ACADEMY-ORG</h1>
+                <h1 id="animated-header">NESTOR-KIRCHER</h1>
             </div>
             <ul id="lista">
                 <li><a href="nuevoinicio.php">Inicio</a></li>

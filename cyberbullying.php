@@ -11,11 +11,11 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
 </head>
 <body id="cyber-page">
     <div id="particles-js"></div>
-    <header id="header">
+    <header id="header2s    ">
         <nav id="menu">
             <div id="header-container">
                 <img id="header-icon" src="klipartz.com.png" alt="Icono" />
-                <h1 id="animated-header">HOPE-ACADEMY-ORG</h1>
+                <h1 id="animated-header">NESTOR-KIRCHER-ORG</h1>
             </div>
             <ul id="lista">
                 <li><a href="nuevoinicio.php">Inicio</a></li>
@@ -103,6 +103,7 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
             </div>
         </section>
     </main>
+    <footer></footer>
 <script src="js/particles.min.js"></script>
 <script src="js/particlesjs-config2.json"></script>
 <script>

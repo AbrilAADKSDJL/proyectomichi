@@ -32,8 +32,8 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
     color: #2e7d32;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
 }
 
 /* Estilos específicos para cyberbullying.php */
@@ -46,8 +46,19 @@ body#cyber-page {
     margin: 0;
     padding: 0;
 }
+#header2{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007BFF;
+    
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Transición más fluida */
 
-header {
+    
+}
+#header {
     
     top: 0;
     left: 0;
@@ -319,10 +330,14 @@ main#cyber-main {
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.cyber-feature-item{
+    transition: background-color 0.5s ease, transform 1.0s ease;
+    
+}
 .cyber-feature-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    background-color: #bbdefb;
 }
 
 /* Estilo específico para los comentarios de cyberbullying.php */
@@ -371,6 +386,7 @@ main#cyber-main {
 .cyber-comment-list .cyber-comment p {
     margin: 5px 0;
 }
+
 
 #menu ul li a.active {
     color: #A5D6A7; /* Verde claro */
