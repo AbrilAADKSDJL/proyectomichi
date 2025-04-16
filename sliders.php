@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider - Fundación Menem Zulemito</title>
+    <title>Fundación Menem Zulemito</title>
     <link rel="stylesheet" href="slide.css">
 </head>
 <body>
@@ -11,14 +11,14 @@
         <nav id="menu">
             <div id="header-container">
                 <img id="header-icon" src="klipartz.com.png" alt="Icono" />
-                <h1 id="animated-header">NESTOR-KIRCHER</h1>
+                <h1 id="animated-header">NESTOR-KIRCHER-ORG</h1>
             </div>
             <ul id="lista">
                 <li><a href="nuevoinicio.php">Inicio</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
-    </header>
+    </header id="header">
     <main>
         <div id="slider">
             <div class="slides">

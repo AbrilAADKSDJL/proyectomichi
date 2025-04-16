@@ -1,0 +1,232 @@
+#particles-js {
+    position: absolute; /* Asegura que el div esté posicionado en relación a la ventana */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 100%; /* Ocupa toda la altura de la pantalla */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Envía el fondo detrás del contenido */
+    
+    }
+/* General */
+
+@font-face {
+    font-family: fino;
+    src: url(CaviarDreams.ttf);
+}
+
+body {
+    font-family: fino;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Fondo degradado azul claro */
+    color: #333;
+    overflow: hidden; /* Elimina el desplazamiento */
+    height: 100vh; /* Asegura que el contenido ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye los elementos verticalmente */
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+header #menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #header-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header #header-icon {
+    width: 50px;
+    height: 50px;
+    animation: bounce 1.5s infinite;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #a5d6a7;
+}
+
+/* Estilo base para las letras del header */
+#animated-header span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInLetters 1s ease-in-out forwards;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye los elementos verticalmente */
+    height: 100%; /* Ocupa toda la altura disponible */
+}
+
+/* Contenedor de ítems */
+.items-container {
+    
+    display: flex;
+    flex-wrap: nowrap; /* Evita que los ítems se apilen verticalmente */
+    gap: 20px; /* Espaciado entre los ítems */
+    justify-content: center; /* Centra los ítems horizontalmente */
+    padding: 10px;
+    flex-grow: 1; /* Permite que este contenedor ocupe el espacio disponible */
+    animation: slideIn 1s ease-in-out; /* Animación de entrada */
+}
+
+/* Ítems */
+.item {
+    flex: 0 0 auto; /* Asegura que los ítems no se reduzcan ni se expandan automáticamente */
+    box-shadow: 10px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    text-align: center;
+    padding: 20px;
+    width: 300px; /* Ancho fijo para cada ítem */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; /* Bordes redondeados */
+    animation: wobble 1s  ease-in-out;
+    background-color: #bbdefb;
+    
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el mouse */
+    animation: none; /* Detiene el tambaleo al pasar el mouse */
+}
+
+/* Imágenes de los ítems */
+.item img {
+    width: 100%;
+    height: 150px; /* Altura más pequeña */
+    object-fit: cover; /* Ajusta la imagen para que se recorte sin deformarse */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    margin-bottom: 10px; /* Espaciado entre la imagen y el título */
+}
+
+/* Botón */
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-in-out; /* Animación de entrada */
+}
+
+.main-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-button:hover {
+    background-color: #388E3C;
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Animación de tambaleo más sutil */
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(0.5deg); /* Rotación más pequeña */
+    }
+    50% {
+        transform: rotate(-0.5deg); /* Rotación más pequeña */
+    }
+    75% {
+        transform: rotate(0.3deg); /* Rotación más pequeña */
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación para las letras */
+@keyframes fadeInLetters {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .items-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 100%;
+        max-width: 300px;
+    }
+}

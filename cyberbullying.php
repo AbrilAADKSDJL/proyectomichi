@@ -11,7 +11,7 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
 </head>
 <body id="cyber-page">
     <div id="particles-js"></div>
-    <header id="header2s    ">
+    <header id="header2">
         <nav id="menu">
             <div id="header-container">
                 <img id="header-icon" src="klipartz.com.png" alt="Icono" />
@@ -103,9 +103,9 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
             </div>
         </section>
     </main>
-    <footer></footer>
+    
 <script src="js/particles.min.js"></script>
-<script src="js/particlesjs-config2.json"></script>
+<script src="js/particlesjs-config.json"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const toggleButton = document.getElementById('toggle-comments');
