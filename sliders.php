@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="slide.css">
 </head>
 <body>
+<audio id="wii-music" src="wii-menu-music.mp3" preload="auto"></audio>
     <header>
         <nav id="menu">
             <div id="header-container">
@@ -18,7 +19,7 @@
                 <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
-    </header id="header">
+    </header>
     <main>
         <div id="slider">
             <div class="slides">
@@ -47,6 +48,10 @@
             </div>
         </div>
     </main>
+
+    <!-- Audio para la música del menú de Wii -->
+    
+
     <script src="slider.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -61,7 +66,22 @@
                 span.style.animationDelay = `${index * 0.1}s`; // Retraso progresivo para cada letra
                 header.appendChild(span);
             });
+
+            
         });
+    </script>
+    <script>
+        // Reproducir música al hacer hover en la página
+        const wiiMusic = document.getElementById('wii-music');
+            document.body.addEventListener('mouseover', () => {
+                
+                    wiiMusic.play().catch(error => {
+                        console.error('Error al reproducir el audio:', error);
+                    });
+            
+            });
+
+            
     </script>
 </body>
 </html>
