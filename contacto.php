@@ -8,16 +8,19 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    <header>
+    <header id="contact-header">
         <nav id="menu">
-            <h1>FUNDACION MENEM ZULEMITO</h1>
+            <div id="header-container">
+                <img id="header-icon" src="klipartz.com.png" alt="Icono" />
+                <h1 id="animated-header">FUNDACIÓN MENEM ZULEMITO</h1>
+            </div>
             <ul id="lista">
-                <li><a href="nuevoinicio.php">Inicio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="inicioreal.php">Inicio</a></li>
+                <li><a href="contacto.php" class="active">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="contact-main">
         <section class="contact-form">
             <h3>Envíanos un mensaje</h3>
             <form action="send_message.php" method="post">
