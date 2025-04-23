@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 require 'db_connection.php';
 session_start();
 
@@ -12,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
     $stmt = $pdo->prepare("INSERT INTO comments (user_id, article, comment) VALUES (?, ?, ?)");
     $stmt->execute([$user_id, $article, $comment]);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,11 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
 <body id="recycling">
 <div id="particles-js"></div> 
 <header id="header">
-
     <nav id="menu">
         <div id="header-container">
             <img id="header-icon" src="klipartz.com.png" alt="Icono" />
-            <h1 id="animated-header">NESTOR-KIRCHER-ORG</h1>
+            <h1 id="animated-header">JAVIER MILEI-ORG</h1>
         </div>
         <ul id="lista">
             <li><a href="sliders.php">Inicio</a></li>
@@ -37,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
         </ul>
     </nav>
 </header>
-
 
 <main>
     <h2 id="titulo">Reciclaje Tecnológico</h2>
@@ -71,13 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
                 <li>Muchos de los residuos electrónicos que no se reciclan son enviados a países empobrecidos, donde terminan en vertederos.</li>
             </ul>
         </article>
-
-        
-    </div>
-
-
-   
-
     </div>
 
     <section class="recycling-comments">
@@ -103,13 +91,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
             ?>
         </div>
     </section>
-
 </main>
 
 <script src="js/particles.min.js"></script>
 <script src="js/particlesjs-config.json"></script>
 <script>
- document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const articles = document.querySelectorAll('.recycling-article');
 
     const observer = new IntersectionObserver((entries) => {
@@ -121,16 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
     }, { threshold: 0.2 });
 
     articles.forEach(article => observer.observe(article));
-
-    const toggleBtn = document.getElementById("toggle-comments1");
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", function () {
-            var formContainer1 = document.getElementById("comment-form-container1");
-            formContainer1.style.display = formContainer1.style.display === "none" ? "block" : "none";
-        });
-    }
 });
-
 </script>
 </body>
 </html>
