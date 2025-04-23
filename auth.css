@@ -1,79 +1,96 @@
-/* General styles */
+/* Estilo general para el body */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
     margin: 0;
     padding: 0;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
 }
 
+/* Contenedor principal */
 .container {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px 30px;
+    background-color: #1a1a1a; /* Fondo gris oscuro */
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Sombra blanca */
     width: 100%;
     max-width: 400px;
     text-align: center;
 }
 
-h1 {
-    font-size: 2rem;
+/* Título */
+.container h1 {
+    font-size: 24px;
     margin-bottom: 20px;
-    color: #fff;
+    color: #ffffff; /* Texto blanco */
 }
 
+/* Estilo para el formulario */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-label {
-    font-size: 1rem;
+/* Estilo para las etiquetas */
+form label {
     text-align: left;
-    color: #ddd;
+    font-size: 14px;
+    color: #ffffff; /* Texto blanco */
 }
 
-input {
+/* Estilo para los inputs */
+form input {
     padding: 10px;
-    border: none;
+    border: 1px solid #333333; /* Borde gris oscuro */
     border-radius: 5px;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1); /* Sombra interna blanca */
+    font-size: 14px;
 }
 
-input:focus {
+form input:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.3);
+    border-color: #ffffff; /* Borde blanco al enfocar */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Sombra blanca al enfocar */
 }
 
-button {
+/* Botón de envío */
+form button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
-    background: #2575fc;
-    color: #fff;
+    background-color: #333333; /* Fondo gris oscuro */
+    color: #ffffff; /* Texto blanco */
+    font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-    background: #6a11cb;
+form button:hover {
+    background-color: #555555; /* Fondo gris más claro al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
 
-a {
-    color: #fff;
+/* Enlace de registro */
+.container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.container p a {
+    color: #4CAF50; /* Verde */
     text-decoration: none;
-    font-size: 0.9rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
+.container p a:hover {
+    color: #66cc66; /* Verde más claro al pasar el mouse */
 }

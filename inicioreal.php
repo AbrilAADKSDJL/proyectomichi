@@ -14,7 +14,7 @@
         <nav id="menu">
             <div id="header-container">
                 <img id="header-icon" src="klipartz.com.png" alt="Icono" />
-                <h1 id="animated-header">FUNDACIÓN MENEM ZULEMITO</h1>
+                <h1 id="animated-header">JAVIERMILEI-ORG</h1>
             </div>
         </nav>
     </header>

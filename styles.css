@@ -391,6 +391,9 @@ main#cyber-main {
 }
 
 /*comentarios de recycling.php*/
+#recycling{
+    overflow: hidden;
+}
 
 .cyber-comments1 {
     background-color: #e6ffe6;

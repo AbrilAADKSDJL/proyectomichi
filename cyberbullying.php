@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
             </div>
             <ul id="lista">
 
-                <li><a href="sliders.php">Inicio</a></li>
+                <li><a href="sliders.php">Sliders</a></li>
 
                 <li><a href="inicioreal.php">Inicio</a></li>
 
