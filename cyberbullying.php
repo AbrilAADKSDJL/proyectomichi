@@ -1,5 +1,15 @@
 <?php
-session_start(); // Inicia la sesión para verificar si el usuario está logueado
+require 'db_connection.php';
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
+    $comment = $_POST['comment'];
+    $user_id = $_SESSION['user_id'];
+    $article = 'cyberbullying';
+
+    $stmt = $pdo->prepare("INSERT INTO comments (user_id, article, comment) VALUES (?, ?, ?)");
+    $stmt->execute([$user_id, $article, $comment]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,10 +25,14 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
         <nav id="menu">
             <div id="header-container">
                 <img id="header-icon" src="klipartz.com.png" alt="Icono" />
-                <h1 id="animated-header">NESTOR-KIRCHER-ORG</h1>
+                <h1 id="animated-header">JAVIER MILEI-ORG</h1>
             </div>
             <ul id="lista">
+
                 <li><a href="sliders.php">Inicio</a></li>
+
+                <li><a href="inicioreal.php">Inicio</a></li>
+
                 <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
@@ -62,43 +76,24 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
         </article>
         <section class="cyber-comments">
             <h3>Comentarios</h3>
-            <button id="toggle-comments">Mostrar formulario de comentarios</button>
-            <div id="comment-form-container" style="display: none;"> <!-- Contenedor oculto inicialmente -->
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <form action="save_comment.php" method="post">
-                        <label for="cyber-comment">Deja tu comentario:</label>
-                        <textarea id="cyber-comment" name="comment" rows="4" required></textarea>
-                        <button type="submit">Enviar</button>
-                    </form>
-                <?php else: ?>
-                    <p>Debes <a href="login.php">iniciar sesión</a> para dejar un comentario.</p>
-                <?php endif; ?>
-            </div>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <form method="POST">
+                    <textarea name="comment" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            <?php else: ?>
+                <p>Debes <a href="login.php">iniciar sesión</a> para dejar un comentario.</p>
+            <?php endif; ?>
+
             <div class="cyber-comment-list">
                 <?php
-                // Conexión a la base de datos
-                $conn = new mysqli('localhost', 'root', '', 'proyectomichi');
-                if ($conn->connect_error) {
-                    die("Error de conexión: " . $conn->connect_error);
+                $stmt = $pdo->prepare("SELECT c.comment, u.username, c.created_at FROM comments c JOIN users u ON c.user_id = u.id WHERE c.article = 'cyberbullying' ORDER BY c.created_at DESC");
+                $stmt->execute();
+                $comments = $stmt->fetchAll();
+
+                foreach ($comments as $comment) {
+                    echo "<p><strong>{$comment['username']}</strong>: {$comment['comment']} <em>({$comment['created_at']})</em></p>";
                 }
-
-                // Obtener comentarios
-                $sql = "SELECT username, comment, created_at FROM comments ORDER BY created_at DESC";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div class='cyber-comment'>";
-                        echo "<p><strong>" . htmlspecialchars($row['username']) . "</strong> dijo:</p>";
-                        echo "<p>" . htmlspecialchars($row['comment']) . "</p>";
-                        echo "<p><small>" . $row['created_at'] . "</small></p>";
-                        echo "</div>";
-                    }
-                } else {
-                    echo "<p>No hay comentarios aún. Sé el primero en comentar.</p>";
-                }
-
-                $conn->close();
                 ?>
             </div>
         </section>

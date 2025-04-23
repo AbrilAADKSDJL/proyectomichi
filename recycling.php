@@ -1,7 +1,18 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+
 session_start();
+require 'db_connection.php';
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
+    $comment = $_POST['comment'];
+    $user_id = $_SESSION['user_id'];
+    $article = 'recycling';
+
+    $stmt = $pdo->prepare("INSERT INTO comments (user_id, article, comment) VALUES (?, ?, ?)");
+    $stmt->execute([$user_id, $article, $comment]);
+}
+>>>>>>> a21b6ea7730e192ae9b0c7aa9763c680ee4ba859
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +25,7 @@ session_start();
 <body id="recycling">
 <div id="particles-js"></div> 
 <header id="header">
+
     <nav id="menu">
         <div id="header-container">
             <img id="header-icon" src="klipartz.com.png" alt="Icono" />
@@ -25,6 +37,7 @@ session_start();
         </ul>
     </nav>
 </header>
+
 
 <main>
     <h2 id="titulo">Reciclaje Tecnológico</h2>
@@ -58,11 +71,39 @@ session_start();
                 <li>Muchos de los residuos electrónicos que no se reciclan son enviados a países empobrecidos, donde terminan en vertederos.</li>
             </ul>
         </article>
+
         
     </div>
 
 
    
+
+    </div>
+
+    <section class="recycling-comments">
+        <h3>Comentarios</h3>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <form method="POST">
+                <textarea name="comment" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        <?php else: ?>
+            <p>Debes <a href="login.php">iniciar sesión</a> para dejar un comentario.</p>
+        <?php endif; ?>
+
+        <div class="recycling-comment-list">
+            <?php
+            $stmt = $pdo->prepare("SELECT c.comment, u.username, c.created_at FROM comments c JOIN users u ON c.user_id = u.id WHERE c.article = 'recycling' ORDER BY c.created_at DESC");
+            $stmt->execute();
+            $comments = $stmt->fetchAll();
+
+            foreach ($comments as $comment) {
+                echo "<p><strong>{$comment['username']}</strong>: {$comment['comment']} <em>({$comment['created_at']})</em></p>";
+            }
+            ?>
+        </div>
+    </section>
+
 </main>
 
 <script src="js/particles.min.js"></script>
