@@ -1,5 +1,7 @@
 <?php
-session_start(); // Inicia la sesión para verificar si el usuario está logueado
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,17 +14,18 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
 <body id="recycling">
 <div id="particles-js"></div> 
 <header id="header">
-        <nav id="menu">
-            <div id="header-container">
-                <img id="header-icon" src="klipartz.com.png" alt="Icono" />
-                <h1 id="animated-header">NESTOR-KIRCHER-ORG</h1>
-            </div>
-            <ul id="lista">
-                <li><a href="nuevoinicio.php">Inicio</a></li>
-                <li><a href="contacto.php">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav id="menu">
+        <div id="header-container">
+            <img id="header-icon" src="klipartz.com.png" alt="Icono" />
+            <h1 id="animated-header">NESTOR-KIRCHER-ORG</h1>
+        </div>
+        <ul id="lista">
+            <li><a href="sliders.php">Inicio</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
 <main>
     <h2 id="titulo">Reciclaje Tecnológico</h2>
     <div id="articles-container">
@@ -55,47 +58,38 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
                 <li>Muchos de los residuos electrónicos que no se reciclan son enviados a países empobrecidos, donde terminan en vertederos.</li>
             </ul>
         </article>
-
+        
     </div>
-    
-    
+
+
+   
 </main>
 
 <script src="js/particles.min.js"></script>
 <script src="js/particlesjs-config.json"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const articles = document.querySelectorAll('.recycling-article');
+ document.addEventListener('DOMContentLoaded', () => {
+    const articles = document.querySelectorAll('.recycling-article');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.2 });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
 
-        articles.forEach(article => observer.observe(article));
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const sections = document.querySelectorAll('main > div, article');
-        const navLinks = document.querySelectorAll('#menu ul li a');
+    articles.forEach(article => observer.observe(article));
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    const id = entry.target.getAttribute('id');
-                    const activeLink = document.querySelector(`#menu ul li a[href="#${id}"]`);
-                    if (activeLink) activeLink.classList.add('active');
-                }
-            });
-        }, { threshold: 0.5 });
+    const toggleBtn = document.getElementById("toggle-comments1");
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", function () {
+            var formContainer1 = document.getElementById("comment-form-container1");
+            formContainer1.style.display = formContainer1.style.display === "none" ? "block" : "none";
+        });
+    }
+});
 
-        sections.forEach(section => observer.observe(section));
-    });
 </script>
 </body>
 </html>

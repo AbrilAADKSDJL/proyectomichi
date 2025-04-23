@@ -18,7 +18,7 @@ session_start(); // Inicia la sesión para verificar si el usuario está loguead
                 <h1 id="animated-header">NESTOR-KIRCHER-ORG</h1>
             </div>
             <ul id="lista">
-                <li><a href="nuevoinicio.php">Inicio</a></li>
+                <li><a href="sliders.php">Inicio</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>

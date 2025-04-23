@@ -8,6 +8,8 @@
     left: 0;
     z-index: -1; /* Envía el fondo detrás del contenido */
     background: linear-gradient(135deg, #e8f5e9, #121312); /* Fondo de respaldo si las partículas no cargan */
+    
+
 }
 @font-face {
 
@@ -175,6 +177,7 @@ main#cyber-main {
     gap: 20px;
     padding: 20px;
     overflow: visible; /* Asegura que el contenido no se corte */
+    
 }
 
 .recycling-article {
@@ -386,6 +389,88 @@ main#cyber-main {
 .cyber-comment-list .cyber-comment p {
     margin: 5px 0;
 }
+
+/*comentarios de recycling.php*/
+
+.cyber-comments1 {
+    background-color: #e6ffe6;
+    border: 2px solid #66cc66;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+}
+
+.cyber-comments1 h3 {
+    color: #006600;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#toggle-comments1 {
+    background-color: #66cc66;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-comments1:hover {
+    background-color: #4CAF50;
+}
+
+#comment-form-container1 {
+    margin-top: 15px;
+}
+
+#cyber-comment1 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #66cc66;
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+#comment-form-container1 button {
+    background-color: #66cc66;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#comment-form-container1 button:hover {
+    background-color: #4CAF50;
+}
+
+.cyber-comment-list1 {
+    margin-top: 30px;
+}
+
+.cyber-comment1 {
+    background-color: #f0fff0;
+    border: 1px solid #66cc66;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.cyber-comment1 strong {
+    color: #006600;
+}
+
+.cyber-comment1 small {
+    color: #666;
+}
+
 
 
 #menu ul li a.active {
