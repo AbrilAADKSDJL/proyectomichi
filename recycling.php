@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
     $stmt = $pdo->prepare("INSERT INTO comments (user_id, article, comment) VALUES (?, ?, ?)");
     $stmt->execute([$user_id, $article, $comment]);
 }
->>>>>>> a21b6ea7730e192ae9b0c7aa9763c680ee4ba859
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
